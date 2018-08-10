@@ -13,6 +13,10 @@ import com.sd.java_tutorial.dp.behavioral.cor.OfferLetter;
 public class DeliveryManager extends ApproverHandler {
 	
 	private static final double SALARY_LIMIT = 800000; 
+	
+	public DeliveryManager(ApproverHandler successor) {
+		this.successor = successor;
+	}
 
 	/* (non-Javadoc)
 	 * @see com.sd.java_tutorial.dp.behavioral.cor.handler.ApproverHandler#handleRequest(com.sd.java_tutorial.dp.behavioral.cor.OfferLetter)
@@ -24,7 +28,7 @@ public class DeliveryManager extends ApproverHandler {
 				|| offer.getDesignation().equals(Designations.SOFTWARE_ENGINEER)))
 			System.out.println("Offer has been approved by Delivery Manager.");
 		else
-			successor.handleRequest(offer);
+			this.successor.handleRequest(offer);
 	}
 
 }

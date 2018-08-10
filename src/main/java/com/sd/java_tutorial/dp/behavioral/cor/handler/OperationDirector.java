@@ -10,6 +10,10 @@ import com.sd.java_tutorial.dp.behavioral.cor.OfferLetter;
  *
  */
 public class OperationDirector extends ApproverHandler {
+	
+	public OperationDirector(ApproverHandler successor) {
+		this.successor = successor;
+	}
 	/* (non-Javadoc)
 	 * @see com.sd.java_tutorial.dp.behavioral.cor.handler.ApproverHandler#handleRequest(com.sd.java_tutorial.dp.behavioral.cor.OfferLetter)
 	 */

@@ -51,13 +51,11 @@ public class App
     	OfferLetter ol2 = new OfferLetter("Asshish Pandhre", Designations.SR_SOFTWARE_TESTER);
     	OfferLetter ol3 = new OfferLetter("Sapan Desai", Designations.TEAM_LEAD);
     	
-    	OperationDirector od = new OperationDirector();
+    	OperationDirector od = new OperationDirector(null);
     	
-    	DevelopmentManager devManager = new DevelopmentManager();
-    	devManager.setSuccessor(od);
+    	DevelopmentManager devManager = new DevelopmentManager(od);
     	
-    	DeliveryManager dm = new DeliveryManager();
-    	dm.setSuccessor(devManager);
+    	DeliveryManager dm = new DeliveryManager(devManager);
     	
     	devManager.handleRequest(ol3);
     	dm.handleRequest(ol2);
