@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.sd.java_tutorial.dp.singletone;
+package com.sd.java_tutorial.dp.creational.singletone;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

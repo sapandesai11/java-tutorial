@@ -2,8 +2,13 @@ package com.sd.java_tutorial;
 
 import java.sql.Connection;
 
-import com.sd.java_tutorial.dp.builder.Player;
-import com.sd.java_tutorial.dp.singletone.DBConnection;
+import com.sd.java_tutorial.dp.behavioral.cor.Designations;
+import com.sd.java_tutorial.dp.behavioral.cor.OfferLetter;
+import com.sd.java_tutorial.dp.behavioral.cor.handler.DeliveryManager;
+import com.sd.java_tutorial.dp.behavioral.cor.handler.DevelopmentManager;
+import com.sd.java_tutorial.dp.behavioral.cor.handler.OperationDirector;
+import com.sd.java_tutorial.dp.creational.builder.Player;
+import com.sd.java_tutorial.dp.creational.singletone.DBConnection;
 
 /**
  * Hello world!
@@ -41,5 +46,25 @@ public class App
     	System.out.println(player.getSkinColor());
     	System.out.println(player.getHairColor());
     	System.out.println(player.getHairStyle());
+    	
+    	OfferLetter ol1 = new OfferLetter("Shreya Desai", Designations.HPEL);
+    	OfferLetter ol2 = new OfferLetter("Asshish Pandhre", Designations.SR_SOFTWARE_TESTER);
+    	OfferLetter ol3 = new OfferLetter("Sapan Desai", Designations.TEAM_LEAD);
+    	
+    	OperationDirector od = new OperationDirector();
+    	
+    	DevelopmentManager devManager = new DevelopmentManager();
+    	devManager.setSuccessor(od);
+    	
+    	DeliveryManager dm = new DeliveryManager();
+    	dm.setSuccessor(devManager);
+    	
+    	devManager.handleRequest(ol3);
+    	dm.handleRequest(ol2);
+    	dm.handleRequest(ol1);
+    	
+    	
+    	
+    	
     }
 }

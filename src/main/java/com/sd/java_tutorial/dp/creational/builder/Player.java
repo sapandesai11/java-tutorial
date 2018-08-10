@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.sd.java_tutorial.dp.builder;
+package com.sd.java_tutorial.dp.creational.builder;
 
 /**
  *  This class represents the player and has the characteristics of the player like name, gender, skin color, hair color, hair style etc.
