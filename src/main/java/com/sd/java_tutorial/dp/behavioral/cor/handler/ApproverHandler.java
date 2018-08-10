@@ -7,8 +7,7 @@ import com.sd.java_tutorial.dp.behavioral.cor.OfferLetter;
 
 /** This abstract class serves as common interface handler in Chain Of Responsibility design pattern.
  * It has successor and an abstract hadnleRequest method.
- * Concrete handler will have to provide it's mplementation of request handling.
- * Client has to provide successor of the 
+ * Concrete handler will have declare its' successor and provide it's implementation of request handling.
  * 
  * @author Sapan.Desai
  *

@@ -3,7 +3,10 @@
  */
 package com.sd.java_tutorial.dp.behavioral.cor;
 
+import com.sd.java_tutorial.dp.behavioral.cor.handler.ApproverHandler;
+
 /** This class is used to store details related to offer released to candidate.
+ * This serves as request all the {@link ApproverHandler}.
  * @author Sapan.Desai
  *
  */
