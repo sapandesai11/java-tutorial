@@ -9,6 +9,10 @@ import com.sd.java_tutorial.dp.behavioral.cor.handler.DevelopmentManager;
 import com.sd.java_tutorial.dp.behavioral.cor.handler.OperationDirector;
 import com.sd.java_tutorial.dp.creational.builder.Player;
 import com.sd.java_tutorial.dp.creational.singletone.DBConnection;
+import com.sd.java_tutorial.dp.structural.decorator.ABSCarDecorator;
+import com.sd.java_tutorial.dp.structural.decorator.Car;
+import com.sd.java_tutorial.dp.structural.decorator.CruiseControlDecorator;
+import com.sd.java_tutorial.dp.structural.decorator.MarutiCar;
 
 /**
  * Hello world!
@@ -29,7 +33,7 @@ public class App
         	System.out.println("They are same.");
         }*/
     	
-    	DBConnection conn = DBConnection.getInstance();
+    	/*DBConnection conn = DBConnection.getInstance();
     	System.out.println(conn);
     	Connection connection = conn.getConnection();
     	
@@ -45,9 +49,10 @@ public class App
     	System.out.println(player.getGender());
     	System.out.println(player.getSkinColor());
     	System.out.println(player.getHairColor());
-    	System.out.println(player.getHairStyle());
+    	System.out.println(player.getHairStyle());*/
     	
-    	OfferLetter ol1 = new OfferLetter("Shreya Desai", Designations.HPEL);
+//    	This is for Chain Of Responsibility pattern
+    	/*OfferLetter ol1 = new OfferLetter("Shreya Desai", Designations.HPEL);
     	OfferLetter ol2 = new OfferLetter("Asshish Pandhre", Designations.SR_SOFTWARE_TESTER);
     	OfferLetter ol3 = new OfferLetter("Sapan Desai", Designations.TEAM_LEAD);
     	
@@ -59,9 +64,12 @@ public class App
     	
     	devManager.handleRequest(ol3);
     	dm.handleRequest(ol2);
-    	dm.handleRequest(ol1);
+    	dm.handleRequest(ol1);*/
     	
+//    	This is for Decorator pattern.
     	
+    	Car marutiCar = new CruiseControlDecorator(new ABSCarDecorator(new MarutiCar("Sedan", "BS IV")));
+    	marutiCar.getCarSpecification();
     	
     	
     }

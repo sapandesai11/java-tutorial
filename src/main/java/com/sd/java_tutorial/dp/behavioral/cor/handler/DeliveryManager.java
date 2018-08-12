@@ -3,6 +3,9 @@
  */
 package com.sd.java_tutorial.dp.behavioral.cor.handler;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 import com.sd.java_tutorial.dp.behavioral.cor.Designations;
 import com.sd.java_tutorial.dp.behavioral.cor.OfferLetter;
 
@@ -12,9 +15,12 @@ import com.sd.java_tutorial.dp.behavioral.cor.OfferLetter;
  */
 public class DeliveryManager extends ApproverHandler {
 	
+	static Logger logger = Logger.getLogger(DeliveryManager.class.getName());
+	
 	private static final double SALARY_LIMIT = 800000; 
 	
 	public DeliveryManager(ApproverHandler successor) {
+		logger.setLevel(Level.INFO);
 		this.successor = successor;
 	}
 
@@ -25,10 +31,15 @@ public class DeliveryManager extends ApproverHandler {
 	public void handleRequest(OfferLetter offer) {
 		if(offer.getDesignation().getAnnualPackage() <= SALARY_LIMIT 
 				|| (offer.getDesignation().equals(Designations.HPEL) 
-				|| offer.getDesignation().equals(Designations.SOFTWARE_ENGINEER)))
-			System.out.println("Offer has been approved by Delivery Manager.");
-		else
+				|| offer.getDesignation().equals(Designations.SOFTWARE_ENGINEER))) 
+		//{
+			logger.info("Approved");
+			//System.out.println("Offer has been approved by Delivery Manager.");
+		//}
+		else {
+			logger.info("Forwarding to my successor.");
 			this.successor.handleRequest(offer);
+		}
 	}
 
 }

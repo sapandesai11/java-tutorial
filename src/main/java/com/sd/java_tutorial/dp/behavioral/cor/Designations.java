@@ -3,7 +3,7 @@
  */
 package com.sd.java_tutorial.dp.behavioral.cor;
 
-/** This is used to store designation and annual package of the employee.
+/** This is used to hold designation and annual package of the employee.
  * @author Sapan.Desai
  *
  */
